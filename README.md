@@ -28,5 +28,5 @@ Below is the 1st phase; Detects anything with the color yellow from the webcam.
             if cv2.waitKey(1) & 0xFF == ord('q'):                                       # Waits for a key press for 1 millisecond and checks if the 'q' key was pressed. If 'q' is pressed, the loop breaks, allowing the program to exit gracefully. The bitwise AND operation with 0xFF ensures compatibility across different platforms and OpenCV versions when checking for key presses.
         break
 
-cap.release()
-cv2.destroyAllWindows()                                                         # closes webcam and all OpenCV windows
+        cap.release()
+        cv2.destroyAllWindows()                                                         # closes webcam and all OpenCV windows
