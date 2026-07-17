@@ -6,12 +6,10 @@ def get_limits(color):                                  # defines a function nam
     c = np.uint8([[color]])                             # wraps your BGR color as a fake 1×1-pixel image and converts its values to the 0–255 integer format OpenCV expects.
     hsvC = cv2.cvtColor(c, cv2.COLOR_BGR2HSV)           # converts the BGR color to HSV color space using OpenCV's cvtColor function.
 
-    lowerLimit = hsvC[0][0][0] - 10, 100, 100           # defines the lower limit of the HSV range for the color detection. It subtracts 10 from the hue value and sets the saturation and value to 100.
-    upperLimit = hsvC[0][0][0] + 10, 255, 255           # defines the upper limit of the HSV range for the color detection. It adds 10 to the hue value and sets the saturation and value to 255.
+    lowerLimit = hsvC[0][0][0] - 20, 100, 100           # defines the lower limit of the HSV range for the color detection. It subtracts 20 from the hue value and sets the saturation and value to 100.
+    upperLimit = hsvC[0][0][0] + 20, 255, 255           # defines the upper limit of the HSV range for the color detection. It adds 20 to the hue value and sets the saturation and value to 255.
 
     lowerLimit = np.array(lowerLimit, dtype=np.uint8)   # converts the lower limit to a NumPy array of type uint8, which is the data type OpenCV expects for image processing.
     upperLimit = np.array(upperLimit, dtype=np.uint8)   # converts the upper limit to a NumPy array of type uint8, which is the data type OpenCV expects for image processing.
 
     return lowerLimit, upperLimit                       # returns the lower and upper limits as NumPy arrays, which can be used for color detection in the main program.
-
-
